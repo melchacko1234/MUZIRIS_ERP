@@ -1,0 +1,9 @@
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite1" thread-count="5" allow-return-values="true">
+<test name="Test1" allow-return-values="true">
+    <classes>
+      <class name="utils.Readingbarcode_excel"/>
+    </classes>
+  </test> <!-- Test1 -->
+</suite> <!-- Suite1 -->
