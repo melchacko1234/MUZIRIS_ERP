@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite2]" parallel="none" allow-return-values="true">
-  <test name="dataprovider">
+  <test name="myTest">
     <classes>
-      <class name="utils.Readingbarcode_excel"/>
+      <class name="test.Samplereadtestbarcodescan"/>
     </classes>
-  </test> <!-- dataprovider -->
-  <test name="dataprovider(failed)" parallel="none">
+  </test> <!-- myTest -->
+  <test name="myTest(failed)" parallel="none">
     <classes>
-      <class name="utils.Readingbarcode_excel">
+      <class name="test.Samplereadtestbarcodescan">
         <methods>
-          <include name="read_xlsx"/>
+          <include name="myTest"/>
         </methods>
-      </class> <!-- utils.Readingbarcode_excel -->
+      </class> <!-- test.Samplereadtestbarcodescan -->
     </classes>
-  </test> <!-- dataprovider(failed) -->
+  </test> <!-- myTest(failed) -->
 </suite> <!-- Failed suite [Suite2] -->

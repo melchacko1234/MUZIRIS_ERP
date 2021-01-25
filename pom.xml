@@ -13,11 +13,13 @@
 	<!-- FIXME change it to the project's website -->
 	<url>http://maven.apache.org</url>
 	<build>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
+
 				<configuration>
 					<testFailureIgnore>true</testFailureIgnore>
 					<argLine>
@@ -36,6 +38,7 @@
 				</dependencies>
 			</plugin>
 		</plugins>
+
 	</build>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -45,6 +48,26 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-checkstyle-plugin</artifactId>
+			<version>3.1.1</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>5.0.0</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>5.0.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -68,7 +91,7 @@
 		</dependency>
 
 
-	
+
 
 
 

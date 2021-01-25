@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="0" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="17" started-at="2021-01-22T10:39:45Z" finished-at="2021-01-22T10:39:45Z">
+  <suite name="Default suite" duration-ms="22894" started-at="2021-01-23T09:14:48Z" finished-at="2021-01-23T09:15:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="17" started-at="2021-01-22T10:39:45Z" finished-at="2021-01-22T10:39:45Z">
+    <test name="Default test" duration-ms="22894" started-at="2021-01-23T09:14:48Z" finished-at="2021-01-23T09:15:11Z">
+      <class name="test.Cashopening">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.Cashopening@1f651cd8]" name="setUp" is-config="true" duration-ms="10502" started-at="2021-01-23T14:44:48Z" finished-at="2021-01-23T14:44:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="cashopened()[pri:0, instance:test.Cashopening@1f651cd8]" name="cashopened" duration-ms="12237" started-at="2021-01-23T14:44:59Z" finished-at="2021-01-23T14:45:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cashopened -->
+      </class> <!-- test.Cashopening -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

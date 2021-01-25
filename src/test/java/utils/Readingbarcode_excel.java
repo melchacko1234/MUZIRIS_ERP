@@ -24,26 +24,17 @@ public class Readingbarcode_excel
 	public XSSFWorkbook xlsx_workbook;
 	public XSSFSheet xlsx_worksheet;
 	
-	@DataProvider(name="test1data")
-	public   String[][] xlsx() throws IOException
+	
+	public   Object[][] xlsx() throws IOException
 	{
 	
-                                                                               // create a new "excel" file with location"filename"
-	    input_document = new FileInputStream(new File("C:\\Users\\Administrator\\git\\Muziris\\Muziris_ERP\\src\\test\\java\\datafiles\\Barcodescan.xlsx"));// link "excel" to "program"as InputStream
+                                                                            
+	    input_document = new FileInputStream(new File("C:\\Users\\Administrator\\git\\Muziris\\Muziris_ERP\\src\\test\\java\\datafiles\\Barcodescan.xlsx"));
 		 xlsx_workbook = new XSSFWorkbook(input_document);// connect the excel using InputStream
 		xlsx_worksheet = xlsx_workbook.getSheet("Sheet1");
-		return null;
-		
-        
-	  
-	}
-    
-        @Test(dataProvider="test1data")
-        public   String[][] xlsx_read()
-        {
         int rownum = xlsx_worksheet.getLastRowNum();
         int colnum = xlsx_worksheet.getRow(0).getLastCellNum();
-        String[][] data = new String[rownum][colnum];
+        Object[][] data = new Object[rownum][colnum];
         for (int i = 0; i < rownum; i++) 
         {
             Row row = xlsx_worksheet.getRow(i);
