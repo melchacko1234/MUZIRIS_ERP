@@ -44,6 +44,7 @@ import org.testng.annotations.Listeners;
 public class Customer_Mobile_new_existingTest extends BaseClass {
 
 	public WebDriver driver;
+	public String winHandleBefore;
 
 	public File scrFile;
 	SoftAssert softassert =new SoftAssert();
@@ -88,9 +89,15 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 
 		driver.findElement(By.linkText("Sales Invoice - Estimate")).click();
 		Thread.sleep(5000);
+		winHandleBefore = driver.getWindowHandle();
 		handlewindow = (String) driver.getWindowHandles().toArray()[1];
 		driver.switchTo().window(handlewindow);
 		Thread.sleep(5000);
+		
+		for(String winHandle : driver.getWindowHandles())
+		{
+		    driver.switchTo().window(winHandle);
+		}
 
 		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Sales Invoice-Estimate_page.png"));
@@ -106,7 +113,7 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 	public  void barcode1() throws InterruptedException, IOException
 	{
 
-		driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("9496531046");
+		driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("9037203719");
 		driver.findElement(By.id("form")).submit();
 		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157895427");
 		driver.findElement(By.id("form")).submit();
@@ -324,24 +331,16 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 		driver.findElement(By.xpath("//*[@id='hbnTBSave']/button")).sendKeys(Keys.RETURN);
 		//*[@id="hbnTBSave"]/button
 
-
+		driver.switchTo().window(winHandleBefore);
+		
+		driver.findElement(By.xpath("//a[@id='profileDropdown']/span")).click();
+	    driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 
 
 	}
 
-	@Severity(SeverityLevel.NORMAL)	
-	@Test(priority=7, description="Verify user Registration")
-	@Description("Verify user Registration........")
-	@Epic("EP007")
-	@Feature("Feature7: Registration")
-	@Story("Story:User registration")
-
-	public void registrationTest()
-	{
-		throw new SkipException("Skipping this Test");
-	}
-
+	
 
 	@AfterClass
 	public void tearDown()

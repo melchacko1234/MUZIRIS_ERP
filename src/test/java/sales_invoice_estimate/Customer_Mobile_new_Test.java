@@ -275,13 +275,29 @@ public class Customer_Mobile_new_Test {
 	{
 
 		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("8905209766868");
-		driver.findElement(By.id("form")).submit();
-
+		driver.findElement(By.xpath("//input[@id='txtScanBarcodeSearch']")).sendKeys(Keys.RETURN);
+		Thread.sleep(3000);
 		String handlewindow4 = (String) driver.getWindowHandles().toArray()[1];
 		driver.switchTo().window(handlewindow4);
 		Actions action = new Actions(driver);
 		action.moveToElement(driver.findElement(By.xpath("//*[@id='productMRPList']/tbody/tr[2]/td[2]"))).doubleClick().perform();
 		Thread.sleep(3000);
+		driver.findElement(By.id("txtSalesmanCode")).click();
+		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
+		
+		driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
+		String handlewindow5 = (String) driver.getWindowHandles().toArray()[1];
+		driver.switchTo().window(handlewindow5);
+		Thread.sleep(5000);
+		new Select(driver.findElement(By.id("ddlPdt_additionalDisType"))).selectByVisibleText("Care of");
+		driver.findElement(By.id("ddlPdt_additionalDisType")).click();
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("//input[@name='pdt_additionalDisRate']")).click();
+		driver.findElement(By.xpath("//input[@name='pdt_additionalDisRate']")).sendKeys("10");
+		new Select(driver.findElement(By.name("pdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
+		driver.findElement(By.name("pdt_additionalApprovedBy")).click();
+		Thread.sleep(4000);
 
 
 
@@ -291,8 +307,8 @@ public class Customer_Mobile_new_Test {
 	@AfterClass
 	public void afterTest_Customer_Mobile_New() {
 
-		driver.close();
-		driver.quit();
+		//driver.close();
+		//driver.quit();
 	}
 
 }

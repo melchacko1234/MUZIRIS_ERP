@@ -26,6 +26,7 @@
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
 					<suiteXmlFiles>
+						<suiteXmlFile>Promotion125_buy_3000.xml</suiteXmlFile>
 						<suiteXmlFile>testngSales_invoice.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
@@ -54,7 +55,7 @@
 			<artifactId>maven-checkstyle-plugin</artifactId>
 			<version>3.1.1</version>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
 		<dependency>
 			<groupId>org.apache.poi</groupId>
