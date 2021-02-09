@@ -4,7 +4,6 @@
   <test thread-count="5" name="Test5">
     <classes>
       <class name="test.Promotion_123_N_items_N_discount_existmobilecust"/>
-      <class name="test.Customer_Mobile_new_existingTest_Promotion_123_N_items_N_discount"/>
     </classes>
   </test> <!-- Test5 -->
 </suite> <!-- Suite1 -->

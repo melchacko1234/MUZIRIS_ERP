@@ -3,7 +3,6 @@
 <suite name="Suite1">
   <test thread-count="5" name="Test4">
     <classes>
-      <class name="test.Customer_Mobile_new_existingTest_Promotion_122_N_items"/>
       <class name="test.Promotion_122_BNGN_N_Nitems_N_items_existmobilecust"/>
     </classes>
   </test> <!-- Test4 -->
