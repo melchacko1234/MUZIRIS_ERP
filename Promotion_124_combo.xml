@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite1">
+  <test thread-count="5" name="Test6">
+    <classes>
+      <class name="test.Promotion_124_combo_sales_existmobilecust"/>
+      <class name="test.Customer_Mobile_new_existingTest_Promotion_124_combo_sales"/>
+    </classes>
+  </test> <!-- Test6 -->
+</suite> <!-- Suite1 -->

@@ -26,7 +26,12 @@
 						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 					</argLine>
 					<suiteXmlFiles>
+						<suiteXmlFile>Promotion_121_N_items.xml</suiteXmlFile>
+						<suiteXmlFile>Promotion122_BNGN.xml</suiteXmlFile>
+						<suiteXmlFile>Promotion_123_N_items_N_discount</suiteXmlFile>
+						<suiteXmlFile>Promotion_124_combo.xml</suiteXmlFile>
 						<suiteXmlFile>Promotion125_buy_3000.xml</suiteXmlFile>
+						<suiteXmlFile>Promotion_126_Earned_discount.xml</suiteXmlFile>
 						<suiteXmlFile>testngSales_invoice.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
