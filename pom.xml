@@ -28,7 +28,7 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>Promotion_121_N_items.xml</suiteXmlFile>
 						<suiteXmlFile>Promotion_122_BNGN.xml</suiteXmlFile>
-						<suiteXmlFile>Promotion_123_N_items_N_discount</suiteXmlFile>
+						<suiteXmlFile>Promotion_123_N_items_N_discount.xml</suiteXmlFile>
 						<suiteXmlFile>Promotion_124_combo.xml</suiteXmlFile>
 						<suiteXmlFile>Promotion125_buy_3000.xml</suiteXmlFile>
 						<suiteXmlFile>Promotion_126_Earned_discount.xml</suiteXmlFile>
