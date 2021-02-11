@@ -268,10 +268,10 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion121\\Sales_Invoice-Estimate_promotion121.png"));
 
 
-			//driver.switchTo().window(winHandleBefore);
+			driver.switchTo().window(winHandleBefore);
 
-			//driver.findElement(By.xpath("//a[@id='profileDropdown']/span")).click();
-			//driver.findElement(By.xpath("//button[@type='submit']")).click();
+			driver.findElement(By.xpath("//a[@id='profileDropdown']/span")).click();
+			driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 
 		}
@@ -279,8 +279,8 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 		@AfterClass
 		public void tearDown()
 		{	
-			//driver.close();
-			//driver.quit();
+			driver.close();
+			driver.quit();
 		}
 
 
