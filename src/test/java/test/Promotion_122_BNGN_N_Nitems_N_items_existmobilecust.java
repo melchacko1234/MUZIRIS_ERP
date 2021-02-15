@@ -5,10 +5,12 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -347,14 +349,30 @@ public class Promotion_122_BNGN_N_Nitems_N_items_existmobilecust {
 		@Feature("Feature 10: All barcodes promotion")
 		@Story("Story:all barcodes promotion")
 		@Step("Verifying promotion122")
-		public  void promotion125() throws InterruptedException
+		public  void promotion122() throws InterruptedException
 		{
 			driver.findElement(By.xpath("//button[@id='btnPromotions']")).sendKeys(Keys.RETURN);
 
 			handlewindow4 = (String) driver.getWindowHandles().toArray()[1];
 			driver.switchTo().window(handlewindow4);
 			Thread.sleep(5000);
-
+			
+			
+             //Should not apply Promotion automatically if Auto Apply is set as 'N'  in the parameter
+			
+			WebElement radioBtn1 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", radioBtn1);
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
+			
+			String gettext =  driver.findElement(By.xpath("//div[@id='notification']/div[2]/h6")).getText();
+			System.out.println(gettext);
+			Thread.sleep(5000);
+			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
+			Thread.sleep(3000);
+			WebElement radioBtn2 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].checked = false;", radioBtn2);
+			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("122");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
@@ -373,7 +391,7 @@ public class Promotion_122_BNGN_N_Nitems_N_items_existmobilecust {
 		@AfterClass
 		public void tearDown()
 		{	
-			//driver.close();
+			driver.close();
 			driver.quit();
 		}
 

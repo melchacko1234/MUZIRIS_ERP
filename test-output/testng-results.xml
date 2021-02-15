@@ -1,45 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="106118" started-at="2021-02-11T07:09:06Z" finished-at="2021-02-11T07:10:52Z">
+  <suite name="Default suite" duration-ms="120029" started-at="2021-02-12T13:41:12Z" finished-at="2021-02-12T13:43:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="106118" started-at="2021-02-11T07:09:06Z" finished-at="2021-02-11T07:10:52Z">
-      <class name="test.Promotion_121_N_items_5_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:test.Promotion_121_N_items_5_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount@652132d1]" name="setUp" is-config="true" duration-ms="6439" started-at="2021-02-11T12:39:06Z" finished-at="2021-02-11T12:39:13Z">
+    <test name="Default test" duration-ms="120029" started-at="2021-02-12T13:41:12Z" finished-at="2021-02-12T13:43:12Z">
+      <class name="test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales@3cae7b8b]" name="setUp" is-config="true" duration-ms="5044" started-at="2021-02-12T19:11:12Z" finished-at="2021-02-12T19:11:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="Customer_Mobile_existing_login_Promotion_121_N_items_5_discount()[pri:1, instance:test.Promotion_121_N_items_5_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount@652132d1]" name="Customer_Mobile_existing_login_Promotion_121_N_items_5_discount" duration-ms="18619" started-at="2021-02-11T12:39:13Z" description="verifying MUziris ERP login test for Promtion121" finished-at="2021-02-11T12:39:31Z">
+        <test-method status="PASS" signature="Customer_Mobile_existing_login_Promotion_124_combo_sales()[pri:1, instance:test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales@3cae7b8b]" name="Customer_Mobile_existing_login_Promotion_124_combo_sales" duration-ms="12598" started-at="2021-02-12T19:11:17Z" description="verifying MUziris ERP login test for promotion124" finished-at="2021-02-12T19:11:30Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Customer_Mobile_existing_login_Promotion_121_N_items_5_discount -->
-        <test-method status="PASS" signature="barcode1_promotion121()[pri:2, instance:test.Promotion_121_N_items_5_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount@652132d1]" name="barcode1_promotion121" duration-ms="25034" started-at="2021-02-11T12:39:32Z" description="Verifying scanning of first barcode test for Promtion121" finished-at="2021-02-11T12:39:57Z">
+        </test-method> <!-- Customer_Mobile_existing_login_Promotion_124_combo_sales -->
+        <test-method status="PASS" signature="barcode1_promotion124()[pri:2, instance:test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales@3cae7b8b]" name="barcode1_promotion124" duration-ms="24756" started-at="2021-02-12T19:11:30Z" description="Verifying scanning of first barcode test for Promtion124" finished-at="2021-02-12T19:11:55Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- barcode1_promotion121 -->
-        <test-method status="PASS" signature="barcode2_promotion121()[pri:3, instance:test.Promotion_121_N_items_5_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount@652132d1]" name="barcode2_promotion121" duration-ms="16408" started-at="2021-02-11T12:39:57Z" description="Verifying sacnning of Second barcode test for Promtion121" finished-at="2021-02-11T12:40:13Z">
+        </test-method> <!-- barcode1_promotion124 -->
+        <test-method status="PASS" signature="barcode2_promotion124()[pri:3, instance:test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales@3cae7b8b]" name="barcode2_promotion124" duration-ms="16170" started-at="2021-02-12T19:11:55Z" description="Verifying scanning of Second barcode test for promotion124" finished-at="2021-02-12T19:12:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- barcode2_promotion121 -->
-        <test-method status="PASS" signature="barcode3_promotion121()[pri:4, instance:test.Promotion_121_N_items_5_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount@652132d1]" name="barcode3_promotion121" duration-ms="7658" started-at="2021-02-11T12:40:13Z" description="Verifying sacnning of third barcode test for Promtion121" finished-at="2021-02-11T12:40:21Z">
+        </test-method> <!-- barcode2_promotion124 -->
+        <test-method status="PASS" signature="barcode3_promotion124()[pri:4, instance:test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales@3cae7b8b]" name="barcode3_promotion124" duration-ms="5579" started-at="2021-02-12T19:12:11Z" description="Verifying sacnning of third barcode test for promotion124" finished-at="2021-02-12T19:12:17Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- barcode3_promotion121 -->
-        <test-method status="PASS" signature="promotion121_Discount()[pri:5, instance:test.Promotion_121_N_items_5_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount@652132d1]" name="promotion121_Discount" duration-ms="19396" started-at="2021-02-11T12:40:21Z" description="Verifying all barcodes Discount for Promtion121" finished-at="2021-02-11T12:40:40Z">
+        </test-method> <!-- barcode3_promotion124 -->
+        <test-method status="PASS" signature="barcode4_promotion122()[pri:5, instance:test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales@3cae7b8b]" name="barcode4_promotion122" duration-ms="5536" started-at="2021-02-12T19:12:17Z" description="Verifying sacnning of fourth barcode test for promotion124" finished-at="2021-02-12T19:12:22Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- promotion121_Discount -->
-        <test-method status="PASS" signature="promotion121()[pri:6, instance:test.Promotion_121_N_items_5_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount@652132d1]" name="promotion121" duration-ms="12305" started-at="2021-02-11T12:40:40Z" description="Verifying whether promotion121 can be applied for the selected barcodes" finished-at="2021-02-11T12:40:52Z">
+        </test-method> <!-- barcode4_promotion122 -->
+        <test-method status="PASS" signature="barcode5_promotion122()[pri:6, instance:test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales@3cae7b8b]" name="barcode5_promotion122" duration-ms="5520" started-at="2021-02-12T19:12:22Z" description="Verifying sacnning of Fifth barcode test for promotion124" finished-at="2021-02-12T19:12:28Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- promotion121 -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.Promotion_121_N_items_5_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount@652132d1]" name="tearDown" is-config="true" duration-ms="1" started-at="2021-02-11T12:40:52Z" finished-at="2021-02-11T12:40:52Z">
+        </test-method> <!-- barcode5_promotion122 -->
+        <test-method status="PASS" signature="promotion124_Discount()[pri:7, instance:test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales@3cae7b8b]" name="promotion124_Discount" duration-ms="19097" started-at="2021-02-12T19:12:28Z" description="Verifying all barcodes Discount" finished-at="2021-02-12T19:12:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- promotion124_Discount -->
+        <test-method status="PASS" signature="promotion124()[pri:8, instance:test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales@3cae7b8b]" name="promotion124" duration-ms="24799" started-at="2021-02-12T19:12:47Z" description="Verifying whether promotion124 can be applied for the selected barcodes" finished-at="2021-02-12T19:13:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- promotion124 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales@3cae7b8b]" name="tearDown" is-config="true" duration-ms="724" started-at="2021-02-12T19:13:12Z" finished-at="2021-02-12T19:13:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- test.Promotion_121_N_items_5_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount -->
+      </class> <!-- test.Promotion_124_combo_sales_existmobilecust$Customer_Mobile_new_existingTest_Promotion_124_combo_sales -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -5,10 +5,12 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -37,7 +39,7 @@ public class Promotion_125_Buy_3000_7Discount_existmobilecust extends Invalid_Po
 		public File scrFile;
 		SoftAssert softassert =new SoftAssert();
 		public String winHandleBefore;
-		
+
 		public String winHandle;
 
 		public String handlewindow, handlewindow1, handlewindow2, handlewindow3, handlewindow4;
@@ -81,14 +83,14 @@ public class Promotion_125_Buy_3000_7Discount_existmobilecust extends Invalid_Po
 			driver.findElement(By.linkText("Sales Invoice - Estimate")).click();
 			Thread.sleep(5000);
 			winHandleBefore = driver.getWindowHandle();
-			
+
 			handlewindow = (String) driver.getWindowHandles().toArray()[1];
 			driver.switchTo().window(handlewindow);
 			Thread.sleep(5000);
-			
+
 			for(String winHandle : driver.getWindowHandles())
 			{
-			    driver.switchTo().window(winHandle);
+				driver.switchTo().window(winHandle);
 			}
 
 			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -113,7 +115,7 @@ public class Promotion_125_Buy_3000_7Discount_existmobilecust extends Invalid_Po
 			System.out.println(gettext);
 			Thread.sleep(10000);
 			//driver.switchTo().alert().getText();
-		    driver.findElement(By.xpath("//button[@class='close-btn']")).click();
+			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
 			//Invalid_Popup.infoBox("YOUR INFORMATION HERE", "TITLE BAR MESSAGE", "HEADER MESSAGE");
 			Thread.sleep(10000);
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("215983408");
@@ -257,21 +259,37 @@ public class Promotion_125_Buy_3000_7Discount_existmobilecust extends Invalid_Po
 			driver.switchTo().window(handlewindow4);
 			Thread.sleep(5000);
 
+			//Should not apply Promotion automatically if Auto Apply is set as 'N'  in the parameter
+
+			WebElement radioBtn1 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", radioBtn1);
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
+
+			String gettext =  driver.findElement(By.xpath("//div[@id='notification']/div[2]/h6")).getText();
+			System.out.println(gettext);
+			Thread.sleep(5000);
+			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
+			Thread.sleep(3000);
+			WebElement radioBtn2 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].checked = false;", radioBtn2);
+			Thread.sleep(3000);
+
 			driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("125");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@id='btnPromotions_Close']")).click();
-			
-			
+
+
 			driver.switchTo().window(winHandleBefore);
-			
+
 			driver.findElement(By.xpath("//a[@id='profileDropdown']/span")).click();
-		    driver.findElement(By.xpath("//button[@type='submit']")).click();
-		
+			driver.findElement(By.xpath("//button[@type='submit']")).click();
+
 
 		}
-		
+
 		@AfterClass
 		public void tearDown()
 		{	

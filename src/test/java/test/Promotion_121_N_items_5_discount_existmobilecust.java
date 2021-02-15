@@ -10,7 +10,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
@@ -258,7 +261,36 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			handlewindow4 = (String) driver.getWindowHandles().toArray()[1];
 			driver.switchTo().window(handlewindow4);
 			Thread.sleep(5000);
+			
+	
+				
+			//Should not apply Promotion automatically if Auto Apply is set as 'N'  in the parameter
+			
+			WebElement radioBtn1 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", radioBtn1);
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
+			
+			String gettext =  driver.findElement(By.xpath("//div[@id='notification']/div[2]/h6")).getText();
+			System.out.println(gettext);
+			Thread.sleep(5000);
+			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
+			Thread.sleep(3000);
+			WebElement radioBtn2 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].checked = false;", radioBtn2);
+			
+			 /*WebElement element = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
+		     WebDriverWait wait = new WebDriverWait(driver, 120);
+		     wait.until(ExpectedConditions.elementToBeClickable(element));
 
+		     element.click();
+			
+			 if(driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']")).isSelected()) {
+	            System.out.println("True");
+	        } else {
+	            System.out.println("False");*/
+	        
+			
 			driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("121");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
@@ -286,4 +318,5 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 
 	}
 }
+
 

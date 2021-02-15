@@ -5,10 +5,12 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -106,16 +108,16 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 
 			driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("9037203719");
 			driver.findElement(By.id("form")).submit();
-			
+
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259863");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			Thread.sleep(4000);
-			
+
 			//Thread.sleep(7000);
 			//driver.findElement(By.xpath("//input[@id='txtQtyPerPiece']")).clear();
-			
-			 //JavascriptExecutor js = (JavascriptExecutor)driver;
-			 //js.executeScript("document.getElementById(xpath(//input[@id='txtQtyPerPiece']).value='2';");
+
+			//JavascriptExecutor js = (JavascriptExecutor)driver;
+			//js.executeScript("document.getElementById(xpath(//input[@id='txtQtyPerPiece']).value='2';");
 			//driver.findElement(By.xpath("//input[@id='txtQtyPerPiece']")).sendKeys("2");
 			//Thread.sleep(7000);
 			driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
@@ -165,7 +167,7 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 			driver.findElement(By.id("ddlPdt_additionalDisType")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@name='pdt_additionalDisAmt']")).click();
-		    driver.findElement(By.xpath("//input[@name='pdt_additionalDisAmt']")).sendKeys("10");
+			driver.findElement(By.xpath("//input[@name='pdt_additionalDisAmt']")).sendKeys("10");
 
 			Thread.sleep(3000);
 
@@ -198,8 +200,8 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 			Thread.sleep(5000);
 			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion126\\Sales_Invoice-Estimate_Barcode3_promotion126.png"));
-			
-			
+
+
 			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259891ERD");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
@@ -208,13 +210,13 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 			Thread.sleep(5000);
 			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
 			//driver.findElement(By.xpath("//button[@id='btnDone']")).click();
-	
-	
-			
+
+
+
 
 		}
-		
-	
+
+
 
 		@Test(priority = 5, description = "Verifying all barcodes Discount for Promtion126")
 		@Severity(SeverityLevel.NORMAL)
@@ -244,6 +246,15 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 			driver.findElement(By.name("genDisc_additionalApprovedBy")).click();
 			Thread.sleep(4000);
 			driver.findElement(By.xpath("//button[@id='btnGenDisc_ApplyAndClose']")).click();
+
+
+			String gettext2 =  driver.findElement(By.xpath("//div[@id='notification']/div[2]/h6")).getText();
+			System.out.println(gettext2);
+			Thread.sleep(5000);
+			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
+			Thread.sleep(3000);
+
+			driver.findElement(By.xpath("//button[@id='btnGenDisc_Cancel']")).click();
 			Thread.sleep(3000);
 			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion126\\Sales_Invoice-Estimate_Allbarcodes_discount126.png"));
@@ -259,13 +270,33 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 		@Feature("Feature 7: Whether promotion126 applied")
 		@Story("Story:Whether promotion126 applied or not ")
 		@Step("Verifying promotion126")
-		public  void promotion123() throws InterruptedException, IOException
+		public  void promotion126() throws InterruptedException, IOException
 		{
 			driver.findElement(By.xpath("//button[@id='btnPromotions']")).sendKeys(Keys.RETURN);
 
 			handlewindow4 = (String) driver.getWindowHandles().toArray()[1];
 			driver.switchTo().window(handlewindow4);
 			Thread.sleep(5000);
+
+			//Should not apply Promotion automatically if Auto Apply is set as 'N'  in the parameter
+
+			WebElement radioBtn1 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", radioBtn1);
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
+
+			/*
+			 * String gettext3 =
+			 * driver.findElement(By.xpath("//div[@id='notification']/div[2]/h6")).getText()
+			 * ; System.out.println(gettext3); Thread.sleep(5000);
+			 * driver.findElement(By.xpath("//button[@class='close-btn']")).click();
+			 */
+			
+			
+			Thread.sleep(3000);
+			WebElement radioBtn2 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
+			((JavascriptExecutor) driver).executeScript("arguments[0].checked = false;", radioBtn2);
+			Thread.sleep(3000);
 
 			driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("126");
 			Thread.sleep(3000);
@@ -292,8 +323,12 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 		}
 
 
+		}
+
 	}
-}
+
+
+
 
 
 
