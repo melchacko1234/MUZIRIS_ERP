@@ -39,6 +39,8 @@ public class Promotion_123_N_items_N_discount_existmobilecust {
 		public String winHandleBefore;
 
 		public String winHandle;
+		
+		public Samplereadtestbarcodescan sc=new Samplereadtestbarcodescan();
 
 		public String handlewindow, handlewindow1, handlewindow2, handlewindow3, handlewindow4;
 
@@ -66,13 +68,6 @@ public class Promotion_123_N_items_N_discount_existmobilecust {
 			driver.findElement(By.xpath("//input[@name='username']")).sendKeys("arun");
 			driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
-
-
-			/* String actualTitle = driver.getTitle();
-			String expectedTitle = "Admin home";
-			softassert.assertEquals(false, true, expectedTitle);
-		   softassert.assertEquals(driver.getTitle(), "Admin home1");
-		   softassert.assertAll();*/
 
 
 
@@ -107,8 +102,9 @@ public class Promotion_123_N_items_N_discount_existmobilecust {
 
 			driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("9037203719");
 			driver.findElement(By.id("form")).submit();
-			
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("159433876");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[13][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("159433876");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			Thread.sleep(4000);
 			
@@ -151,8 +147,9 @@ public class Promotion_123_N_items_N_discount_existmobilecust {
 		@Step("Verify scanning of second barcode for Promtion123")
 		public  void barcode2_promotion121() throws InterruptedException, IOException
 		{
-
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221664314");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[14][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221664314");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@id='txtPiece']")).clear();
@@ -190,9 +187,10 @@ public class Promotion_123_N_items_N_discount_existmobilecust {
 		@Step("Verify scanning of Third barcode for Promtion123")
 		public  void barcode3_promotion123() throws InterruptedException, IOException
 		{
-			//code to check validation of enough stock.
-
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221664902");
+			
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[15][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221664902");
 			driver.findElement(By.id("form")).submit();
 			//Thread.sleep(3000);
 			//driver.findElement(By.xpath("//input[@id='txtPiece']")).clear();

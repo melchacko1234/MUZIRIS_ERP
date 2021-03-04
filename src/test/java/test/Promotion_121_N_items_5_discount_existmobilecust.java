@@ -29,8 +29,13 @@ import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import listners.Allure_listner;
 import manager.BaseClass;
+import utils.Readingbarcode_excel;
+import test.Samplereadtestbarcodescan;
 
 public class Promotion_121_N_items_5_discount_existmobilecust {
+
+
+
 
 	@Listeners({Allure_listner.class})
 	public class Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount extends BaseClass  {
@@ -40,6 +45,9 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 		public File scrFile;
 		SoftAssert softassert =new SoftAssert();
 		public String winHandleBefore;
+
+		public Samplereadtestbarcodescan sc=new Samplereadtestbarcodescan();
+		
 
 		public String winHandle;
 
@@ -66,9 +74,9 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 
 
 
-			driver.findElement(By.xpath("//input[@name='username']")).sendKeys("arun");
-			driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
+			//driver.findElement(By.xpath("//input[@name='username']")).sendKeys("arun");
+			//driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
+			//driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 
 			/* String actualTitle = driver.getTitle();
@@ -76,8 +84,28 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			softassert.assertEquals(false, true, expectedTitle);
 		   softassert.assertEquals(driver.getTitle(), "Admin home1");
 		   softassert.assertAll();*/
+			
+//if user is logged in steps to logout and login  again
+			
+			
+			if(driver.findElement(By.xpath("//button[@id='btnLogout']")).isDisplayed())
+			{
+				driver.findElement(By.xpath("//button[@id='btnLogout']")).click();
+				
+				driver.findElement(By.xpath("//input[@name='username']")).sendKeys("arun");
+				driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
+				driver.findElement(By.xpath("//button[@type='submit']")).click();
 
+			} else {
+				
+				
+				driver.findElement(By.xpath("//input[@name='username']")).sendKeys("arun");
+				driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
+				driver.findElement(By.xpath("//button[@type='submit']")).click();
 
+		
+
+			}
 
 			//Sales Invoice - Estimate Page
 
@@ -108,19 +136,31 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 		public  void barcode1_promotion121() throws InterruptedException, IOException
 		{
 
+
+
 			driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("9037203719");
 			driver.findElement(By.id("form")).submit();
-			
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("281500095145");
+			//Samplereadtestbarcodescan sc=new Samplereadtestbarcodescan();
+			Object [][] arr1=sc.myTest1();
+
+			//for(int i=1;i<arr1.length;i++)
+
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[1][0]);
+
+
+
+
+
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("281500095145");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			Thread.sleep(7000);
 			driver.findElement(By.xpath("//input[@id='txtPiece']")).clear();
 			driver.findElement(By.xpath("//input[@id='txtPiece']")).sendKeys("3");
 			//Thread.sleep(7000);
 			//driver.findElement(By.xpath("//input[@id='txtQtyPerPiece']")).clear();
-			
-			 //JavascriptExecutor js = (JavascriptExecutor)driver;
-			 //js.executeScript("document.getElementById(xpath(//input[@id='txtQtyPerPiece']).value='2';");
+
+			//JavascriptExecutor js = (JavascriptExecutor)driver;
+			//js.executeScript("document.getElementById(xpath(//input[@id='txtQtyPerPiece']).value='2';");
 			//driver.findElement(By.xpath("//input[@id='txtQtyPerPiece']")).sendKeys("2");
 			//Thread.sleep(7000);
 			driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
@@ -154,9 +194,20 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 		@Story("Story:Second barcode for Promtion121")
 		@Step("Verify scanning of second barcode for Promtion121")
 		public  void barcode2_promotion121() throws InterruptedException, IOException
+
+
+
 		{
 
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("281500117291");
+			//Samplereadtestbarcodescan sc=new Samplereadtestbarcodescan();
+			Object [][] arr1=sc.myTest1();
+
+
+
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[2][0]);
+
+
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("281500117291");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			//driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
 			driver.findElement(By.xpath("//button[@id='btnDiscount']")).sendKeys(Keys.RETURN);
@@ -167,7 +218,7 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			driver.findElement(By.id("ddlPdt_additionalDisType")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@name='pdt_additionalDisAmt']")).click();
-		    driver.findElement(By.xpath("//input[@name='pdt_additionalDisAmt']")).sendKeys("10");
+			driver.findElement(By.xpath("//input[@name='pdt_additionalDisAmt']")).sendKeys("10");
 
 			Thread.sleep(3000);
 
@@ -191,9 +242,13 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 		@Step("Verify scanning of Third barcode for Promtion121")
 		public  void barcode3_promotion121() throws InterruptedException, IOException
 		{
-			//code to check validation of enough stock.
+			Object [][] arr1=sc.myTest1();
 
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("172657942");
+		
+
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[3][0]);
+
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("172657942");
 			driver.findElement(By.id("form")).submit();
 			//Thread.sleep(3000);
 			//driver.findElement(By.xpath("//input[@id='txtPiece']")).clear();
@@ -208,8 +263,8 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion121\\Sales_Invoice-Estimate_Barcode3_promotion.png"));
 
 		}
-		
-	
+
+
 
 		@Test(priority = 5, description = "Verifying all barcodes Discount for Promtion121")
 		@Severity(SeverityLevel.NORMAL)
@@ -261,16 +316,16 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			handlewindow4 = (String) driver.getWindowHandles().toArray()[1];
 			driver.switchTo().window(handlewindow4);
 			Thread.sleep(5000);
-			
-	
-				
+
+
+
 			//Should not apply Promotion automatically if Auto Apply is set as 'N'  in the parameter
-			
+
 			WebElement radioBtn1 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", radioBtn1);
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
-			
+
 			String gettext =  driver.findElement(By.xpath("//div[@id='notification']/div[2]/h6")).getText();
 			System.out.println(gettext);
 			Thread.sleep(5000);
@@ -278,35 +333,35 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			Thread.sleep(3000);
 			WebElement radioBtn2 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].checked = false;", radioBtn2);
-			
-			 /*WebElement element = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
-		     WebDriverWait wait = new WebDriverWait(driver, 120);
-		     wait.until(ExpectedConditions.elementToBeClickable(element));
 
-		     element.click();
-			
-			 if(driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']")).isSelected()) {
-	            System.out.println("True");
-	        } else {
-	            System.out.println("False");*/
-	        
-			
-			driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("121");
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//button[@id='btnPromotions_Close']")).click();
-			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion121\\Sales_Invoice-Estimate_promotion121.png"));
+			/*WebElement element = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
+			WebDriverWait wait = new WebDriverWait(driver, 120);
+			wait.until(ExpectedConditions.elementToBeClickable(element));
+
+			element.click();
+
+			if(driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']")).isSelected()) {
+				System.out.println("True");
+			} else {
+				System.out.println("False");*/
 
 
-			driver.switchTo().window(winHandleBefore);
+				driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("121");
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
+				Thread.sleep(3000);
+				driver.findElement(By.xpath("//button[@id='btnPromotions_Close']")).click();
+				scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+				FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion121\\Sales_Invoice-Estimate_promotion121.png"));
 
-			driver.findElement(By.xpath("//a[@id='profileDropdown']/span")).click();
-			driver.findElement(By.xpath("//button[@type='submit']")).click();
 
+				driver.switchTo().window(winHandleBefore);
 
-		}
+				driver.findElement(By.xpath("//a[@id='profileDropdown']/span")).click();
+				driver.findElement(By.xpath("//button[@type='submit']")).click();
+
+			}
+		
 
 		@AfterClass
 		public void tearDown()
@@ -316,7 +371,6 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 		}
 
 
+
 	}
 }
-
-

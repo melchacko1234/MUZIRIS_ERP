@@ -6,13 +6,4 @@
       <class name="utils.Readingbarcode_excel"/>
     </classes>
   </test> <!-- Test1 -->
-  <test name="Test1(failed)" parallel="none">
-    <classes>
-      <class name="utils.Readingbarcode_excel">
-        <methods>
-          <include name="read_xlsx"/>
-        </methods>
-      </class> <!-- utils.Readingbarcode_excel -->
-    </classes>
-  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

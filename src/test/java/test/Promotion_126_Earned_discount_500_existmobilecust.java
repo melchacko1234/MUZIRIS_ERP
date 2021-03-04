@@ -42,6 +42,7 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 		public String winHandle;
 
 		public String handlewindow, handlewindow1, handlewindow2, handlewindow3, handlewindow4;
+		public Samplereadtestbarcodescan sc=new Samplereadtestbarcodescan();
 
 		@BeforeClass 
 		public void setUp() {
@@ -69,12 +70,7 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 
 
-			/* String actualTitle = driver.getTitle();
-			String expectedTitle = "Admin home";
-			softassert.assertEquals(false, true, expectedTitle);
-		   softassert.assertEquals(driver.getTitle(), "Admin home1");
-		   softassert.assertAll();*/
-
+		
 
 
 			//Sales Invoice - Estimate Page
@@ -108,8 +104,9 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 
 			driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("9037203719");
 			driver.findElement(By.id("form")).submit();
-
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259863");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[30][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259863");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			Thread.sleep(4000);
 
@@ -143,17 +140,20 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 		//Scanning 2nd item of the barcode
 
 
-		@Test(priority = 3, description = "Verifying sacnning of Second barcode test for Promtion123")
+		@Test(priority = 3, description = "Verifying sacnning of Second barcode test for Promtion126")
 		@Severity(SeverityLevel.NORMAL)
-		@Description("Testcase description: Verfiy sacnning of Second barcode in Sales Invoice - Estimate for Promtion123 ")
+		@Description("Testcase description: Verfiy sacnning of Second barcode in Sales Invoice - Estimate for Promtion126 ")
 		@Epic("EP006")
-		@Feature("Feature 2: Second barcode for Promtion123")
-		@Story("Story:Second barcode for Promtion123")
-		@Step("Verify scanning of second barcode for Promtion123")
+		@Feature("Feature 2: Second barcode for Promtion126")
+		@Story("Story:Second barcode for Promtion126")
+		@Step("Verify scanning of second barcode for Promtion126")
 		public  void barcode2_promotion126() throws InterruptedException, IOException
 		{
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[31][0]);
 
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228204054");
+			
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228204054");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@id='txtPiece']")).clear();
@@ -182,18 +182,19 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 		}
 		//3rd bardcode scan and also validation of enough stock for the particular barcode.
 
-		@Test(priority = 4, description = "Verifying sacnning of third barcode test for Promtion123")
+		@Test(priority = 4, description = "Verifying sacnning of third barcode test for Promtion126")
 		@Severity(SeverityLevel.NORMAL)
-		@Description("Testcase description: Verfiy sacnning of third barcode in Sales Invoice - Estimate for Promtion121 ")
+		@Description("Testcase description: Verfiy sacnning of third barcode in Sales Invoice - Estimate for Promtion126 ")
 		@Epic("EP006")
 		@Feature("Feature 4: Third barcode for Promtion126")
 		@Story("Story:Third barcode for Promtion126")
 		@Step("Verify scanning of Third barcode for Promtion126")
 		public  void barcode3_promotion126() throws InterruptedException, IOException
 		{
-			//code to check validation of enough stock.
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[32][0]);
 
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259891");
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259891");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			String gettext =driver.findElement(By.id("notification")).getText();
 			System.out.println(gettext);
@@ -203,7 +204,9 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 
 
 			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259891ERD");
+			
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[33][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259891ERD");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			String gettext1 =driver.findElement(By.id("notification")).getText();
 			System.out.println(gettext1);
@@ -318,7 +321,7 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 		@AfterClass
 		public void tearDown()
 		{	
-			//driver.close();
+			driver.close();
 			driver.quit();
 		}
 

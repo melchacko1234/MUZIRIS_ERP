@@ -40,6 +40,8 @@ public class Promotion_124_combo_sales_existmobilecust {
 		public String winHandleBefore;
 		
 		public String winHandle;
+		
+		public Samplereadtestbarcodescan sc=new Samplereadtestbarcodescan();
 
 		public String handlewindow, handlewindow1, handlewindow2, handlewindow3, handlewindow4;
 
@@ -67,13 +69,6 @@ public class Promotion_124_combo_sales_existmobilecust {
 			driver.findElement(By.xpath("//input[@name='username']")).sendKeys("arun");
 			driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
-
-
-			/* String actualTitle = driver.getTitle();
-			String expectedTitle = "Admin home";
-			softassert.assertEquals(false, true, expectedTitle);
-		   softassert.assertEquals(driver.getTitle(), "Admin home1");
-		   softassert.assertAll();*/
 
 
 
@@ -108,14 +103,18 @@ public class Promotion_124_combo_sales_existmobilecust {
 
 			driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("9037203719");
 			driver.findElement(By.id("form")).submit();
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228309444");
+			
+			
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[17][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228309444");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			String gettext =driver.findElement(By.id("notification")).getText();
 			System.out.println(gettext);
 			Thread.sleep(5000);
 			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
-			
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("2212598913452");
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[18][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("2212598913452");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			String gettext1 =driver.findElement(By.id("notification")).getText();
 			System.out.println(gettext1);
@@ -123,8 +122,8 @@ public class Promotion_124_combo_sales_existmobilecust {
 			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
 			
 			
-			//Invalid_Popup.infoBox("YOUR INFORMATION HERE", "TITLE BAR MESSAGE", "HEADER MESSAGE");
 			
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[19][0]);
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228204054");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).click();
 			driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
@@ -161,7 +160,9 @@ public class Promotion_124_combo_sales_existmobilecust {
 		public  void barcode2_promotion124() throws InterruptedException, IOException
 		{
 
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228097347");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[20][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228097347");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).click();
 			//driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
 			driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
@@ -196,9 +197,9 @@ public class Promotion_124_combo_sales_existmobilecust {
 		@Step("Verify scanning of Third barcode for promotion124")
 		public  void barcode3_promotion124() throws InterruptedException, IOException
 		{
-			//code to check validation of enough stock.
-
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228097349");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[21][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228097349");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).click();
 			Thread.sleep(3000);
 		
@@ -220,9 +221,9 @@ public class Promotion_124_combo_sales_existmobilecust {
 		@Step("Verify scanning of Fourth barcode for promotion124")
 		public  void barcode4_promotion122() throws InterruptedException, IOException
 		{
-			//code to check validation of enough stock.
-
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228097357");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[22][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228097357");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).click();
 			Thread.sleep(3000);
 		
@@ -243,9 +244,9 @@ public class Promotion_124_combo_sales_existmobilecust {
 		@Step("Verify scanning of Fifth barcode for promotion124")
 		public  void barcode5_promotion122() throws InterruptedException, IOException
 		{
-			//code to check validation of enough stock.
-
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228097364");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[23][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228097364");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).click();
 			Thread.sleep(3000);
 		

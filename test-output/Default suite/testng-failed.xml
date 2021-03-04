@@ -3,7 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]" parallel="none">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="test.Promotion_124_combo_sales_existmobilecust"/>
+      <class name="test.Promotion_126_Earned_discount_500_existmobilecust"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)" parallel="none">
+    <classes>
+      <class name="test.Promotion_126_Earned_discount_500_existmobilecust$Customer_Mobile_new_existingTest_Promotion_126_Earned_discount_500">
+        <methods>
+          <include name="tearDown"/>
+          <include name="barcode3_promotion126"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- test.Promotion_126_Earned_discount_500_existmobilecust$Customer_Mobile_new_existingTest_Promotion_126_Earned_discount_500 -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -39,6 +39,8 @@ public class Promotion_122_BNGN_N_Nitems_N_items_existmobilecust {
 		public String winHandleBefore;
 		
 		public String winHandle;
+		
+		public Samplereadtestbarcodescan sc=new Samplereadtestbarcodescan();
 
 		public String handlewindow, handlewindow1, handlewindow2, handlewindow3, handlewindow4;
 
@@ -104,17 +106,19 @@ public class Promotion_122_BNGN_N_Nitems_N_items_existmobilecust {
 		@Step("Verify scanning of first barcode for Promtion122")
 		public  void barcode1_promotion122() throws InterruptedException, IOException
 		{
-
+			
+			
+			Object [][] arr1=sc.myTest1();
 			driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("9037203719");
 			driver.findElement(By.id("form")).submit();
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("172211105");
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[5][0]);
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			String gettext =driver.findElement(By.id("notification")).getText();
 			System.out.println(gettext);
 			Thread.sleep(5000);
 			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
 			
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259891ERD");
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[6][0]);
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			String gettext1 =driver.findElement(By.id("notification")).getText();
 			System.out.println(gettext1);
@@ -160,7 +164,8 @@ public class Promotion_122_BNGN_N_Nitems_N_items_existmobilecust {
 		public  void barcode2_promotion122() throws InterruptedException, IOException
 		{
 
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221387501");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[7][0]);
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).click();
 			//driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
 			driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
@@ -196,8 +201,8 @@ public class Promotion_122_BNGN_N_Nitems_N_items_existmobilecust {
 		public  void barcode3_promotion122() throws InterruptedException, IOException
 		{
 			//code to check validation of enough stock.
-
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("172216295");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[8][0]);
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).click();
 			Thread.sleep(3000);
 		
@@ -220,8 +225,8 @@ public class Promotion_122_BNGN_N_Nitems_N_items_existmobilecust {
 		public  void barcode4_promotion122() throws InterruptedException, IOException
 		{
 			//code to check validation of enough stock.
-
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("171910536");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[9][0]);
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).click();
 			Thread.sleep(3000);
 		
@@ -243,8 +248,8 @@ public class Promotion_122_BNGN_N_Nitems_N_items_existmobilecust {
 		public  void barcode5_promotion122() throws InterruptedException, IOException
 		{
 			//code to check validation of enough stock.
-
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("172212611");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[9][0]);
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).click();
 			Thread.sleep(3000);
 		
@@ -290,8 +295,9 @@ public class Promotion_122_BNGN_N_Nitems_N_items_existmobilecust {
 		public  void barcode7_promotion122() throws InterruptedException, IOException
 		{
 			//code to check validation of enough stock.
-
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("172210801");
+			Object [][] arr1=sc.myTest1();
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[10][0]);
+			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("172210801");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).click();
 			Thread.sleep(3000);
 		

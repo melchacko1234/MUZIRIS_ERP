@@ -6,13 +6,4 @@
       <class name="test.Samplereadtestbarcodescan"/>
     </classes>
   </test> <!-- Test3 -->
-  <test name="Test3(failed)" parallel="none">
-    <classes>
-      <class name="test.Samplereadtestbarcodescan">
-        <methods>
-          <include name="myTest"/>
-        </methods>
-      </class> <!-- test.Samplereadtestbarcodescan -->
-    </classes>
-  </test> <!-- Test3(failed) -->
 </suite> <!-- Failed suite [Suite3] -->
