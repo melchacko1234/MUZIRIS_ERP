@@ -28,7 +28,7 @@ import io.qameta.allure.Story;
 import listners.Allure_listner;
 import manager.BaseClass;
 
-public class Promotion_126_Earned_discount_500_existmobilecust {
+public class Promotion_126_Earned_Combined_Area_Bucketised {
 
 	@Listeners({Allure_listner.class})
 	public class Customer_Mobile_new_existingTest_Promotion_126_Earned_discount_500 extends BaseClass  {
@@ -105,7 +105,7 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 			driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("9037203719");
 			driver.findElement(By.id("form")).submit();
 			Object [][] arr1=sc.myTest1();
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[30][0]);
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259913");;
 			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259863");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			Thread.sleep(4000);
@@ -150,19 +150,16 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 		public  void barcode2_promotion126() throws InterruptedException, IOException
 		{
 			Object [][] arr1=sc.myTest1();
-			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys((String) arr1[31][0]);
+			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("221259921");;
 
 			
 			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("228204054");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			Thread.sleep(3000);
-			
 			driver.findElement(By.xpath("//input[@id='txtPiece']")).clear();
 			driver.findElement(By.xpath("//input[@id='txtPiece']")).sendKeys("2");
-			driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
-			 driver.findElement(By.xpath("//button[@id='btnDone']")).click();
-			 
-			/*driver.findElement(By.xpath("//button[@id='btnDiscount']")).sendKeys(Keys.RETURN);
+			//driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
+			driver.findElement(By.xpath("//button[@id='btnDiscount']")).sendKeys(Keys.RETURN);
 			handlewindow2 = (String) driver.getWindowHandles().toArray()[1];
 			driver.switchTo().window(handlewindow2);
 			Thread.sleep(5000);
@@ -178,7 +175,7 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 			new Select(driver.findElement(By.id("ddlPdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
 			driver.findElement(By.name("pdt_additionalApprovedBy")).click();
 			Thread.sleep(4000);
-			driver.findElement(By.xpath("//button[@id='btnPdt_Apply']")).click();*/
+			driver.findElement(By.xpath("//button[@id='btnPdt_Apply']")).click();
 			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion126\\Sales_Invoice-Estimate_Barcode2_promotion126.png"));
 
@@ -244,7 +241,7 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 			driver.findElement(By.name("genDisc_additionalDisType")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).click();
-			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).sendKeys("15");
+			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).sendKeys("5");
 			Thread.sleep(3000);
 
 
@@ -308,50 +305,9 @@ public class Promotion_126_Earned_discount_500_existmobilecust {
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
 			Thread.sleep(3000);
-			
-			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion126\\Sales_Invoice-Estimate_promotion126failed.png"));
-			driver.findElement(By.xpath("//button[@id='btnPromotions_CancelPromotion']")).click();
 			driver.findElement(By.xpath("//button[@id='btnPromotions_Close']")).click();
-
-
-
-
-
-
-			//Promotion only if the Additional Discount is less 5
-
-
-
-
-			driver.findElement(By.id("btnGenDiscount")).sendKeys(Keys.RETURN);
-
-			String handlewindow6 = (String) driver.getWindowHandles().toArray()[1];
-			driver.switchTo().window(handlewindow6);
-			Thread.sleep(5000);
-
-			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).clear();
-			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).click();
-			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).sendKeys("3.5");
-
-			driver.findElement(By.xpath("//button[@id='btnGenDisc_ApplyAndClose']")).click();
-
-			driver.findElement(By.xpath("//button[@id='btnPromotions']")).sendKeys(Keys.RETURN);
-
-			String handlewindow8 = (String) driver.getWindowHandles().toArray()[1];
-			driver.switchTo().window(handlewindow8);
-			Thread.sleep(5000);
-
-			driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("126");
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
-
 			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion126\\Sales_Invoice-Estimate_promotion126.png"));
-
-			driver.findElement(By.xpath("//button[@id='btnPromotions_Close']")).click();
-
-
 
 
 			driver.switchTo().window(winHandleBefore);

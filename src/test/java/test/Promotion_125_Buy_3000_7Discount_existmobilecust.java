@@ -233,7 +233,7 @@ public class Promotion_125_Buy_3000_7Discount_existmobilecust extends Invalid_Po
 			driver.findElement(By.name("genDisc_additionalDisType")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).click();
-			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).sendKeys("3.5");
+			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).sendKeys("15");
 			Thread.sleep(3000);
 
 
@@ -256,7 +256,7 @@ public class Promotion_125_Buy_3000_7Discount_existmobilecust extends Invalid_Po
 		@Feature("Feature 4: All barcodes Discount")
 		@Story("Story:all barcodes Discount")
 		@Step("Verifying promotion125")
-		public  void promotion125() throws InterruptedException
+		public  void promotion125() throws InterruptedException, IOException
 		{
 			driver.findElement(By.xpath("//button[@id='btnPromotions']")).sendKeys(Keys.RETURN);
 
@@ -284,7 +284,50 @@ public class Promotion_125_Buy_3000_7Discount_existmobilecust extends Invalid_Po
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
 			Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[@id='btnPromotions_CancelPromotion']")).click();
+			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion125\\Sales_Invoice-Estimate_promotion125failed.png"));
+
 			driver.findElement(By.xpath("//button[@id='btnPromotions_Close']")).click();
+
+
+
+
+
+
+			//Promotion only if the Additional Discount is less 5
+
+
+
+
+			driver.findElement(By.id("btnGenDiscount")).sendKeys(Keys.RETURN);
+
+			String handlewindow6 = (String) driver.getWindowHandles().toArray()[1];
+			driver.switchTo().window(handlewindow6);
+			Thread.sleep(5000);
+
+			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).clear();
+			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).click();
+			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).sendKeys("3.5");
+
+			driver.findElement(By.xpath("//button[@id='btnGenDisc_ApplyAndClose']")).click();
+
+			driver.findElement(By.xpath("//button[@id='btnPromotions']")).sendKeys(Keys.RETURN);
+
+			String handlewindow8 = (String) driver.getWindowHandles().toArray()[1];
+			driver.switchTo().window(handlewindow8);
+			Thread.sleep(5000);
+
+			driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("125");
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
+
+			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion125\\Sales_Invoice-Estimate_promotion125.png"));
+
+			driver.findElement(By.xpath("//button[@id='btnPromotions_Close']")).click();
+
+
 
 
 			driver.switchTo().window(winHandleBefore);
@@ -292,13 +335,12 @@ public class Promotion_125_Buy_3000_7Discount_existmobilecust extends Invalid_Po
 			driver.findElement(By.xpath("//a[@id='profileDropdown']/span")).click();
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-
 		}
 
 		@AfterClass
 		public void tearDown()
 		{	
-			//driver.close();
+			driver.close();
 			driver.quit();
 		}
 

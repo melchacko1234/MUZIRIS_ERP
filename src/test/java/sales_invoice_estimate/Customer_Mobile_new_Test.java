@@ -97,7 +97,7 @@ public class Customer_Mobile_new_Test {
 
 		Thread.sleep(3000);
 		driver.findElement(By.id("txtCustomerInfo_customerName")).clear();
-		driver.findElement(By.id("txtCustomerInfo_customerName")).sendKeys("rishi Singh");
+		driver.findElement(By.id("txtCustomerInfo_customerName")).sendKeys("Jinju rathore");
 		Thread.sleep(3000);
 
 		// checkbox click--not working
@@ -128,7 +128,7 @@ public class Customer_Mobile_new_Test {
 		// Entermobilenumber
 
 		driver.findElement(By.xpath("//input[@name='customerInfo_mobno']")).clear();
-		driver.findElement(By.xpath("//input[@name='customerInfo_mobno']")).sendKeys("8921763153");
+		driver.findElement(By.xpath("//input[@name='customerInfo_mobno']")).sendKeys("8921763166");
 
 		// Emailid
 		driver.findElement(By.xpath("//input[@name='customerInfo_email']")).sendKeys("abrham@gmail.com");
@@ -136,6 +136,10 @@ public class Customer_Mobile_new_Test {
 		// PAN textbox
 
 		driver.findElement(By.xpath("//input[@name='customerInfo_panno']")).sendKeys("ABBDED098F");
+		
+		
+		driver.findElement(By.xpath("//input[@name='customerInfo_gstNumber']")).sendKeys("324569878415");
+			
 		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Sales Invoice-Customer_Mobile_New_registation.png"));
 		// updatebutton click
@@ -159,9 +163,9 @@ public class Customer_Mobile_new_Test {
 		driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("8921763152");
 		driver.findElement(By.id("form")).submit();*/
 
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("205749484");
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157654381");
 		driver.findElement(By.id("form")).submit();
-		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
+		//driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
 		driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
 		String handlewindow1 = (String) driver.getWindowHandles().toArray()[1];
 		driver.switchTo().window(handlewindow1);
@@ -197,7 +201,7 @@ public class Customer_Mobile_new_Test {
 	{
 		//code to check validation of enough stock.
 
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("205749533");
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("158160497");
 		driver.findElement(By.id("form")).submit();
 		driver.findElement(By.id("txtSalesmanCode")).click();
 		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
@@ -241,7 +245,7 @@ public class Customer_Mobile_new_Test {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//a[contains(@href,'#generalSearch') and @data-toggle='collapse']")).click();
 		Thread.sleep(3000);
-		driver.findElement(By.xpath("//input[@id='txtSearch_phNo']")).sendKeys("8921763153");
+		driver.findElement(By.xpath("//input[@id='txtSearch_phNo']")).sendKeys("8921763166");
 
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@id='btnSearch']")).click();
@@ -271,10 +275,10 @@ public class Customer_Mobile_new_Test {
 	@Story("Story:EAN_barcodeScan")
 	@Step("Verify EAN_barcodeScan")
 
-	public  void EAN_barcodeScan_new_cust_mob() throws InterruptedException
+	public  void EAN_barcodeScan_new_cust_mob() throws InterruptedException, IOException
 	{
 
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("8905209766868");
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("K13090719MSTL");
 		driver.findElement(By.xpath("//input[@id='txtScanBarcodeSearch']")).sendKeys(Keys.RETURN);
 		Thread.sleep(3000);
 		String handlewindow4 = (String) driver.getWindowHandles().toArray()[1];
@@ -298,6 +302,25 @@ public class Customer_Mobile_new_Test {
 		new Select(driver.findElement(By.name("pdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
 		driver.findElement(By.name("pdt_additionalApprovedBy")).click();
 		Thread.sleep(4000);
+		driver.findElement(By.xpath("//button[@id='btnPdt_Apply']")).click();
+		
+		Thread.sleep(4000);
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("K13090719MSTM");
+		driver.findElement(By.xpath("//input[@id='txtScanBarcodeSearch']")).sendKeys(Keys.RETURN);
+		Thread.sleep(3000);
+		String handlewindow6 = (String) driver.getWindowHandles().toArray()[1];
+		driver.switchTo().window(handlewindow6);
+		Actions action1 = new Actions(driver);
+		action1.moveToElement(driver.findElement(By.xpath("//*[@id='productMRPList']/tbody/tr[2]/td[2]"))).doubleClick().perform();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@id='txtPiece']")).clear();
+		driver.findElement(By.xpath("//input[@id='txtPiece']")).sendKeys("20");
+		driver.findElement(By.id("txtSalesmanCode")).clear();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@id='hbnTBSave']/button")).sendKeys(Keys.RETURN);
+		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Sales Invoice-EAN_Barcode_new_cust_mob.png"));
+	
 
 
 
