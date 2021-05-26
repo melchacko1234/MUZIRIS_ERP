@@ -72,7 +72,7 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 
 
 
-		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("arun");
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("reshmi");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
@@ -115,9 +115,11 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 
 		driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("9037203719");
 		driver.findElement(By.id("form")).submit();
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157895427");
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157904379");
 		driver.findElement(By.id("form")).submit();
-		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
+		Thread.sleep(3000);
+		driver.findElement(By.id("txtSalesmanCode")).clear();
+		driver.findElement(By.id("txtSalesmanCode")).sendKeys("101");
 		driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
 		handlewindow1 = (String) driver.getWindowHandles().toArray()[1];
 		driver.switchTo().window(handlewindow1);
@@ -128,8 +130,8 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 
 		driver.findElement(By.xpath("//input[@name='pdt_additionalDisRate']")).click();
 		driver.findElement(By.xpath("//input[@name='pdt_additionalDisRate']")).sendKeys("5");
-		new Select(driver.findElement(By.name("pdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
-		driver.findElement(By.name("pdt_additionalApprovedBy")).click();
+		//new Select(driver.findElement(By.name("pdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
+		//driver.findElement(By.name("pdt_additionalApprovedBy")).click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//button[@id='btnPdt_Apply']")).click();
 		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -151,9 +153,11 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 	public  void barcode2() throws InterruptedException, IOException
 	{
 
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157895428");
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157904380");
 		driver.findElement(By.id("form")).submit();
-		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
+		Thread.sleep(3000);
+		driver.findElement(By.id("txtSalesmanCode")).clear();
+		driver.findElement(By.id("txtSalesmanCode")).sendKeys("101");
 		driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
 		handlewindow2 = (String) driver.getWindowHandles().toArray()[1];
 		driver.switchTo().window(handlewindow2);
@@ -162,15 +166,15 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 		driver.findElement(By.id("ddlPdt_additionalDisType")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@name='pdt_additionalDisAmt']")).click();
-		driver.findElement(By.xpath("//input[@name='pdt_additionalDisAmt']")).sendKeys("40");
+		driver.findElement(By.xpath("//input[@name='pdt_additionalDisAmt']")).sendKeys("10");
 
 
 
 		Thread.sleep(3000);
 
 
-		new Select(driver.findElement(By.id("ddlPdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
-		driver.findElement(By.name("pdt_additionalApprovedBy")).click();
+		//new Select(driver.findElement(By.id("ddlPdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
+		//driver.findElement(By.name("pdt_additionalApprovedBy")).click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//button[@id='btnPdt_Apply']")).click();
 		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -190,10 +194,13 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 	{
 		//code to check validation of enough stock.
 
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157896758");
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157906936");
 		driver.findElement(By.id("form")).submit();
 		driver.findElement(By.id("txtSalesmanCode")).click();
-		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
+		Thread.sleep(3000);
+		driver.findElement(By.id("txtSalesmanCode")).clear();
+		
+		driver.findElement(By.id("txtSalesmanCode")).sendKeys("101");
 		driver.findElement(By.xpath("//button[@id='btnDone']")).click();
 
 		Thread.sleep(2000);
@@ -218,10 +225,12 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 	@Step("Verify scanning of Fourth barcode")
 	public  void barcode4() throws InterruptedException, IOException
 	{
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157910948");
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157910946");
 		driver.findElement(By.id("form")).submit();
 		driver.findElement(By.id("txtSalesmanCode")).click();
-		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
+		Thread.sleep(3000);
+		driver.findElement(By.id("txtSalesmanCode")).clear();
+		driver.findElement(By.id("txtSalesmanCode")).sendKeys("101");
 		driver.findElement(By.xpath("//button[@id='btnDone']")).click();
 
 
@@ -254,8 +263,8 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 		Thread.sleep(3000);
 
 
-		new Select(driver.findElement(By.name("genDisc_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
-		driver.findElement(By.name("genDisc_additionalApprovedBy")).click();
+		//new Select(driver.findElement(By.name("genDisc_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
+		//driver.findElement(By.name("genDisc_additionalApprovedBy")).click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//button[@id='btnGenDisc_ApplyAndClose']")).click();
 		Thread.sleep(3000);
@@ -325,7 +334,7 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 		scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Sales_Invoice-Estimate_Barcode4_2_delete.png"));
 
-
+/*
 		// Save button 
 
 		driver.findElement(By.xpath("//*[@id='hbnTBSave']/button")).sendKeys(Keys.RETURN);
@@ -336,7 +345,7 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 		driver.findElement(By.xpath("//a[@id='profileDropdown']/span")).click();
 	    driver.findElement(By.xpath("//button[@type='submit']")).click();
 
-
+*/
 
 	}
 
@@ -346,7 +355,7 @@ public class Customer_Mobile_new_existingTest extends BaseClass {
 	public void tearDown()
 	{	
 		//driver.close();
-		driver.quit();
+		//driver.quit();
 	}
 
 

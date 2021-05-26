@@ -3,7 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]" parallel="none">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="test_Bill_settlement.Promotion_121_N_items_5_Exist_cust"/>
+      <class name="test.Promotion_145_ED_500_2500_10percent_discount_existmobilecust"/>
     </classes>
   </test> <!-- Default test -->
 </suite> <!-- Failed suite [Default suite] -->

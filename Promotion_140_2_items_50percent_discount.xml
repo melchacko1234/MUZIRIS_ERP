@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite_Promotion_140">
+  <test thread-count="1" name="Salesinvoice_Promotion_140">
+    <classes>
+      <class name="test.Promotion_140_2_items_50percent_discount_existmobilecust"/>
+      
+    </classes>
+  </test> <!-- Test1 -->
+</suite> <!-- Suite1 -->

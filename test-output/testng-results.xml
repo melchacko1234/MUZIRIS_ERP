@@ -1,29 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="117013" started-at="2021-04-03T09:19:28Z" finished-at="2021-04-03T09:21:25Z">
+  <suite name="Default suite" duration-ms="103071" started-at="2021-05-26T05:24:47Z" finished-at="2021-05-26T05:26:30Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="117013" started-at="2021-04-03T09:19:28Z" finished-at="2021-04-03T09:21:25Z">
-      <class name="test_Bill_settlement.Promotion_121_N_items_5_Exist_cust$Customer_Mobile_new_Test">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:test_Bill_settlement.Promotion_121_N_items_5_Exist_cust$Customer_Mobile_new_Test@540dbda9]" name="setUp" is-config="true" duration-ms="5539" started-at="2021-04-03T14:49:28Z" finished-at="2021-04-03T14:49:33Z">
+    <test name="Default test" duration-ms="103071" started-at="2021-05-26T05:24:47Z" finished-at="2021-05-26T05:26:30Z">
+      <class name="test.Promotion_145_ED_500_2500_10percent_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_145_ED_500_2500_10percent_discount">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:test.Promotion_145_ED_500_2500_10percent_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_145_ED_500_2500_10percent_discount@5ac3673a]" name="setUp" is-config="true" duration-ms="7067" started-at="2021-05-26T10:54:47Z" finished-at="2021-05-26T10:54:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="login_Customer_Mobile_New()[pri:1, instance:test_Bill_settlement.Promotion_121_N_items_5_Exist_cust$Customer_Mobile_new_Test@540dbda9]" name="login_Customer_Mobile_New" duration-ms="11628" started-at="2021-04-03T14:49:33Z" description="Verify user Registration" finished-at="2021-04-03T14:49:45Z">
+        <test-method status="PASS" signature="Customer_Mobile_existing_login_Promotion_145()[pri:1, instance:test.Promotion_145_ED_500_2500_10percent_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_145_ED_500_2500_10percent_discount@5ac3673a]" name="Customer_Mobile_existing_login_Promotion_145" duration-ms="12413" started-at="2021-05-26T10:54:54Z" description="verifying MUziris ERP login test" finished-at="2021-05-26T10:55:06Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login_Customer_Mobile_New -->
-        <test-method status="PASS" signature="Bill_Settlement_exist_Mobile_cust_promotion121_scan_estimate()[pri:2, instance:test_Bill_settlement.Promotion_121_N_items_5_Exist_cust$Customer_Mobile_new_Test@540dbda9]" name="Bill_Settlement_exist_Mobile_cust_promotion121_scan_estimate" duration-ms="62009" started-at="2021-04-03T14:49:45Z" description="Verify user can complete new mobile number registration" finished-at="2021-04-03T14:50:47Z">
+        </test-method> <!-- Customer_Mobile_existing_login_Promotion_145 -->
+        <test-method status="PASS" signature="barcode1_promotion145()[pri:2, instance:test.Promotion_145_ED_500_2500_10percent_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_145_ED_500_2500_10percent_discount@5ac3673a]" name="barcode1_promotion145" duration-ms="13238" started-at="2021-05-26T10:55:07Z" description="Verifying scanning of first barcode test" finished-at="2021-05-26T10:55:20Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Bill_Settlement_exist_Mobile_cust_promotion121_scan_estimate -->
-        <test-method status="PASS" signature="Bill_Settlement_exist_Mobile_cust_promotion121_card_payment()[pri:4, instance:test_Bill_settlement.Promotion_121_N_items_5_Exist_cust$Customer_Mobile_new_Test@540dbda9]" name="Bill_Settlement_exist_Mobile_cust_promotion121_card_payment" duration-ms="37539" started-at="2021-04-03T14:50:47Z" description="Verify user can complete Payment" finished-at="2021-04-03T14:51:25Z">
+        </test-method> <!-- barcode1_promotion145 -->
+        <test-method status="PASS" signature="barcode2_promotion145()[pri:3, instance:test.Promotion_145_ED_500_2500_10percent_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_145_ED_500_2500_10percent_discount@5ac3673a]" name="barcode2_promotion145" duration-ms="3889" started-at="2021-05-26T10:55:20Z" description="Verifying sacnning of Second barcode test" finished-at="2021-05-26T10:55:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Bill_Settlement_exist_Mobile_cust_promotion121_card_payment -->
-      </class> <!-- test_Bill_settlement.Promotion_121_N_items_5_Exist_cust$Customer_Mobile_new_Test -->
+        </test-method> <!-- barcode2_promotion145 -->
+        <test-method status="PASS" signature="promotion145_Discount()[pri:5, instance:test.Promotion_145_ED_500_2500_10percent_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_145_ED_500_2500_10percent_discount@5ac3673a]" name="promotion145_Discount" duration-ms="16103" started-at="2021-05-26T10:55:24Z" description="Verifying all barcodes Discount" finished-at="2021-05-26T10:55:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- promotion145_Discount -->
+        <test-method status="PASS" signature="promotion145()[pri:6, instance:test.Promotion_145_ED_500_2500_10percent_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_145_ED_500_2500_10percent_discount@5ac3673a]" name="promotion145" duration-ms="49159" started-at="2021-05-26T10:55:40Z" description="Verifying whether promotion145 can be applied for the selected barcodes" finished-at="2021-05-26T10:56:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- promotion145 -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:test.Promotion_145_ED_500_2500_10percent_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_145_ED_500_2500_10percent_discount@5ac3673a]" name="tearDown" is-config="true" duration-ms="934" started-at="2021-05-26T10:56:29Z" finished-at="2021-05-26T10:56:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- test.Promotion_145_ED_500_2500_10percent_discount_existmobilecust$Customer_Mobile_new_existingTest_Promotion_145_ED_500_2500_10percent_discount -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

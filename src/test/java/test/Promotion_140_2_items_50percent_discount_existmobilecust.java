@@ -33,13 +33,13 @@ import manager.BaseClass;
 import utils.Readingbarcode_excel;
 import test.Samplereadtestbarcodescan;
 
-public class Promotion_121_N_items_5_discount_existmobilecust {
+public class Promotion_140_2_items_50percent_discount_existmobilecust {
 
 
 
 
 	@Listeners({Allure_listner.class})
-	public class Customer_Mobile_new_existingTest_Promotion_121_N_items_5_discount extends BaseClass  {
+	public class Customer_Mobile_new_existingTest_Promotion_140_2_items_50percent_discount extends BaseClass  {
 
 		public WebDriver driver;
 
@@ -61,7 +61,7 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			driver.get("http://192.168.0.131:8394/posmodules/");
 		}
 
-		@Test(priority = 1, description = "verifying MUziris ERP login test for Promtion121")
+		@Test(priority = 1, description = "verifying MUziris ERP login test for Promotion140")
 		@Severity(SeverityLevel.NORMAL)
 		@Description("Testcase description: Verfiy login credentinals of MUziris ERP")
 		@Epic("EP001")
@@ -69,13 +69,13 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 		@Story("Story:Valid login")
 		@Step("Verify login")
 
-		public void Customer_Mobile_existing_login_Promotion_121_N_items_5_discount()  throws InterruptedException, IOException  {
+		public void Customer_Mobile_existing_login_Promotion_140_2_items_50percent_discount()  throws InterruptedException, IOException  {
 
 			//Login Page
 
 
 
-			driver.findElement(By.xpath("//input[@name='username']")).sendKeys("arun");
+			driver.findElement(By.xpath("//input[@name='username']")).sendKeys("reshmi");
 			driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
 			driver.findElement(By.xpath("//button[@type='submit']")).click();
 
@@ -124,17 +124,17 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			}
 
 			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion121\\Sales Invoice-Estimate_page.png"));
+			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promotion140\\Sales Invoice-Estimate_page.png"));
 		}
 
-		@Test(priority = 2, description = "Verifying scanning of first barcode test for Promtion121")
+		@Test(priority = 2, description = "Verifying scanning of first barcode test for Promotion140")
 		@Severity(SeverityLevel.NORMAL)
-		@Description("Testcase description: Verfiy scanning of first barcode in Sales Invoice - Estimate for Promtion121 ")
+		@Description("Testcase description: Verfiy scanning of first barcode in Sales Invoice - Estimate for Promotion140 ")
 		@Epic("EP004")
-		@Feature("Feature 1: First barcode for Promtion121")
-		@Story("Story:First barcode for Promtion121")
-		@Step("Verify scanning of first barcode for Promtion121")
-		public  void barcode1_promotion121() throws InterruptedException, IOException
+		@Feature("Feature 1: First barcode for Promotion140")
+		@Story("Story:First barcode for Promotion140")
+		@Step("Verify scanning of first barcode for Promotion140")
+		public  void barcode1_promotion140() throws InterruptedException, IOException
 		{
 
 
@@ -156,14 +156,9 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
 			Thread.sleep(7000);
 			driver.findElement(By.xpath("//input[@id='txtPiece']")).clear();
-			driver.findElement(By.xpath("//input[@id='txtPiece']")).sendKeys("3");
-			//Thread.sleep(7000);
-			//driver.findElement(By.xpath("//input[@id='txtQtyPerPiece']")).clear();
-
-			//JavascriptExecutor js = (JavascriptExecutor)driver;
-			//js.executeScript("document.getElementById(xpath(//input[@id='txtQtyPerPiece']).value='2';");
-			//driver.findElement(By.xpath("//input[@id='txtQtyPerPiece']")).sendKeys("2");
-			//Thread.sleep(7000);
+			driver.findElement(By.xpath("//input[@id='txtPiece']")).sendKeys("2");
+			driver.findElement(By.id("txtSalesmanCode")).clear();
+			driver.findElement(By.id("txtSalesmanCode")).sendKeys("101");
 			driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
 			handlewindow1 = (String) driver.getWindowHandles().toArray()[1];
 			driver.switchTo().window(handlewindow1);
@@ -174,12 +169,12 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 
 			driver.findElement(By.xpath("//input[@name='pdt_additionalDisRate']")).click();
 			driver.findElement(By.xpath("//input[@name='pdt_additionalDisRate']")).sendKeys("5");
-			new Select(driver.findElement(By.name("pdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
-			driver.findElement(By.name("pdt_additionalApprovedBy")).click();
+			/*new Select(driver.findElement(By.name("pdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
+			driver.findElement(By.name("pdt_additionalApprovedBy")).click();*/
 			Thread.sleep(4000);
 			driver.findElement(By.xpath("//button[@id='btnPdt_Apply']")).click();
 			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion121\\Sales_Invoice-Estimate_Barcode1_promotion.png"));
+			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion140\\Sales_Invoice-Estimate_Barcode1_promotion.png"));
 
 		}
 
@@ -187,20 +182,20 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 		//Scanning 2nd item of the barcode
 
 
-		@Test(priority = 3, description = "Verifying sacnning of Second barcode test for Promtion121")
+		@Test(priority = 3, description = "Verifying sacnning of Second barcode test for Promotion140")
 		@Severity(SeverityLevel.NORMAL)
-		@Description("Testcase description: Verfiy sacnning of Second barcode in Sales Invoice - Estimate for Promtion121 ")
+		@Description("Testcase description: Verfiy sacnning of Second barcode in Sales Invoice - Estimate for Promotion140 ")
 		@Epic("EP004")
-		@Feature("Feature 2: Second barcode for Promtion121")
-		@Story("Story:Second barcode for Promtion121")
-		@Step("Verify scanning of second barcode for Promtion121")
-		public  void barcode2_promotion121() throws InterruptedException, IOException
+		@Feature("Feature 2: Second barcode for Promotion140")
+		@Story("Story:Second barcode for Promotion140")
+		@Step("Verify scanning of second barcode for Promotion140")
+		public  void barcode2_promotion140() throws InterruptedException, IOException
 
 
 
 		{
 
-			//Samplereadtestbarcodescan sc=new Samplereadtestbarcodescan();
+			
 			Object [][] arr1=sc.myTest1();
 
 
@@ -210,8 +205,12 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 
 			//driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("281500117291");
 			driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys(Keys.RETURN);
-			//driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
-			driver.findElement(By.xpath("//button[@id='btnDiscount']")).sendKeys(Keys.RETURN);
+			driver.findElement(By.id("txtSalesmanCode")).clear();
+			driver.findElement(By.id("txtSalesmanCode")).sendKeys("101");
+			driver.findElement(By.xpath("//button[@id='btnDone']")).click();
+			
+			//button[@id='btnDone']
+			/*driver.findElement(By.xpath("//button[@id='btnDiscount']")).sendKeys(Keys.RETURN);
 			handlewindow2 = (String) driver.getWindowHandles().toArray()[1];
 			driver.switchTo().window(handlewindow2);
 			Thread.sleep(5000);
@@ -221,20 +220,20 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			driver.findElement(By.xpath("//input[@name='pdt_additionalDisAmt']")).click();
 			driver.findElement(By.xpath("//input[@name='pdt_additionalDisAmt']")).sendKeys("10");
 
-			Thread.sleep(3000);
+			Thread.sleep(3000);*/
 
 
-			new Select(driver.findElement(By.id("ddlPdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
-			driver.findElement(By.name("pdt_additionalApprovedBy")).click();
+			/*new Select(driver.findElement(By.id("ddlPdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
+			driver.findElement(By.name("pdt_additionalApprovedBy")).click();*/
 			Thread.sleep(4000);
-			driver.findElement(By.xpath("//button[@id='btnPdt_Apply']")).click();
+			//driver.findElement(By.xpath("//button[@id='btnPdt_Apply']")).click();
 			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion121\\Sales_Invoice-Estimate_Barcode2_promotion.png"));
+			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promotion140\\Sales_Invoice-Estimate_Barcode2_promotion140.png"));
 
 		}
 		//3rd bardcode scan and also validation of enough stock for the particular barcode.
 
-		@Test(priority = 4, description = "Verifying sacnning of third barcode test for Promtion121")
+		/*@Test(priority = 4, description = "Verifying sacnning of third barcode test for Promtion121")
 		@Severity(SeverityLevel.NORMAL)
 		@Description("Testcase description: Verfiy sacnning of third barcode in Sales Invoice - Estimate for Promtion121 ")
 		@Epic("EP004")
@@ -263,18 +262,18 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion121\\Sales_Invoice-Estimate_Barcode3_promotion.png"));
 
-		}
+		}*/
 
 
 
-		@Test(priority = 5, description = "Verifying all barcodes Discount for Promtion121")
+		@Test(priority = 5, description = "Verifying all barcodes Discount for Promotion140")
 		@Severity(SeverityLevel.NORMAL)
-		@Description("Testcase description: Verfiy all barcodes Discount in Sales Invoice - Estimate for Promtion121")
+		@Description("Testcase description: Verfiy all barcodes Discount in Sales Invoice - Estimate for Promotion140")
 		@Epic("EP004")
-		@Feature("Feature 6: All barcodes Discount for Promtion121")
-		@Story("Story:all barcodes Discount for Promtion121")
-		@Step("Verifying all barcodes Discount for Promtion121")
-		public  void promotion121_Discount() throws InterruptedException, IOException
+		@Feature("Feature 6: All barcodes Discount for Promotion140")
+		@Story("Story:all barcodes Discount for Promotion140")
+		@Step("Verifying all barcodes Discount for Promotion140")
+		public  void Promotion140_Discount() throws InterruptedException, IOException
 		{
 
 			driver.findElement(By.id("btnGenDiscount")).sendKeys(Keys.RETURN);
@@ -287,7 +286,7 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			driver.findElement(By.name("genDisc_additionalDisType")).click();
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).click();
-			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).sendKeys("12");
+			driver.findElement(By.xpath("//input[@id='txtGenDisc_additionalDisRate']")).sendKeys("6");
 			Thread.sleep(3000);
 
 
@@ -297,54 +296,51 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			driver.findElement(By.xpath("//button[@id='btnGenDisc_ApplyAndClose']")).click();
 			Thread.sleep(3000);
 			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion121\\Sales_Invoice-Estimate_Allbarcodes_discount.png"));
+			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promotion140\\Sales_Invoice-Estimate_Allbarcodes_discount.png"));
 
 
 		}
 
 
-		@Test(priority = 6, description = "Verifying whether promotion121 can be applied for the selected barcodes")
+		@Test(priority = 6, description = "Verifying whether Promotion140 can be applied for the selected barcodes")
 		@Severity(SeverityLevel.NORMAL)
-		@Description("Testcase description: Verfiy whether promotion121 applied in Sales Invoice ")
+		@Description("Testcase description: Verfiy whether promotion140 applied in Sales Invoice ")
 		@Epic("EP004")
-		@Feature("Feature 7: Whether promotion121 applied")
-		@Story("Story:Whether promotion121 applied or not ")
-		@Step("Verifying promotion121")
-		public  void promotion121() throws InterruptedException, IOException
+		@Feature("Feature 7: Whether Promotion140 applied")
+		@Story("Story:Whether Promotion140 applied or not ")
+		@Step("Verifying Promotion140")
+		public  void Promotion140() throws InterruptedException, IOException
 		{
 			driver.findElement(By.xpath("//button[@id='btnPromotions']")).sendKeys(Keys.RETURN);
 
 			handlewindow4 = (String) driver.getWindowHandles().toArray()[1];
 			driver.switchTo().window(handlewindow4);
 			Thread.sleep(5000);
-
+			 //apply auto Promotion when checked  if Auto Apply is set as 'Y'  in the parameter
 
 			WebElement radioBtn1 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
 			((JavascriptExecutor) driver).executeScript("arguments[0].checked = true;", radioBtn1);
 			Thread.sleep(3000);
-			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
 			
-			String gettext =  driver.findElement(By.xpath("//div[@id='notification']/div[2]/h6")).getText();
-			System.out.println(gettext);
-			Thread.sleep(5000);
-			driver.findElement(By.xpath("//button[@class='close-btn']")).click();
-			Thread.sleep(3000);
-			WebElement radioBtn2 = driver.findElement(By.xpath("//input[@id='chkPromotions_Auto']"));
-			((JavascriptExecutor) driver).executeScript("arguments[0].checked = false;", radioBtn2);
-			Thread.sleep(3000);
-			driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("122");
-			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
-			Thread.sleep(3000);
-			
-			driver.findElement(By.xpath("//button[@id='btnPromotions_CancelPromotion']")).click();
 			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion121\\Sales_Invoice-Estimate_promotion121failed.png"));
+			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promotion140\\Sales_Invoice-Estimate_promotion140autoapplyfailedpassed.png"));
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[@id='btnPromotions_CancelPromotion']")).click();
+			driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("140");
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
+			Thread.sleep(3000);
+
+			driver.findElement(By.xpath("//button[@id='btnPromotions_CancelPromotion']")).click();
+			Thread.sleep(3000);
+			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promotion140\\Sales_Invoice-Estimate_promotion140textappliedfailedpass.png"));
 			
 			driver.findElement(By.xpath("//button[@id='btnPromotions_Close']")).click();
 			
 			
-			//Promotion only if the Additional Discount is less 5
+			//Promotion only if the Additional Discount is less than 5
 			
 			
 			driver.findElement(By.id("btnGenDiscount")).sendKeys(Keys.RETURN);
@@ -365,14 +361,16 @@ public class Promotion_121_N_items_5_discount_existmobilecust {
 			driver.switchTo().window(handlewindow8);
 			Thread.sleep(5000);
 			
-			driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("121");
+			driver.findElement(By.xpath("//input[@name='promotions_PromoCode']")).sendKeys("140");
 			Thread.sleep(3000);
 			driver.findElement(By.xpath("//button[@id='btnPromotions_ApplyPromotion']")).click();
 			
-			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion121\\Sales_Invoice-Estimate_promotion121.png"));
-
+			
 			driver.findElement(By.xpath("//button[@id='btnPromotions_Close']")).click();
+			Thread.sleep(3000);
+			scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+			FileUtils.copyFile(scrFile, new File("E:\\MUZIRIS_ERP\\Promotion\\Promtion140\\Sales_Invoice-Estimate_promotion140.png"));
+
 			
 
 			

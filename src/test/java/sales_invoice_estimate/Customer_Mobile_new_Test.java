@@ -52,7 +52,7 @@ public class Customer_Mobile_new_Test {
 	{
 
 
-		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("arun");
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("reshmi");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 
@@ -163,9 +163,10 @@ public class Customer_Mobile_new_Test {
 		driver.findElement(By.xpath("//input[@name='customerInfo_phoneno']")).sendKeys("8921763152");
 		driver.findElement(By.id("form")).submit();*/
 
-		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("157654381");
+		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("216352472");
 		driver.findElement(By.id("form")).submit();
-		//driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
+		driver.findElement(By.id("txtSalesmanCode")).clear();
+		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
 		driver.findElement(By.xpath("//button[@id='btnDiscount']")).click();
 		String handlewindow1 = (String) driver.getWindowHandles().toArray()[1];
 		driver.switchTo().window(handlewindow1);
@@ -176,8 +177,8 @@ public class Customer_Mobile_new_Test {
 
 		driver.findElement(By.xpath("//input[@name='pdt_additionalDisRate']")).click();
 		driver.findElement(By.xpath("//input[@name='pdt_additionalDisRate']")).sendKeys("5");
-		new Select(driver.findElement(By.name("pdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
-		driver.findElement(By.name("pdt_additionalApprovedBy")).click();
+		//new Select(driver.findElement(By.name("pdt_additionalApprovedBy"))).selectByVisibleText("ANIL KUMAR C.S");
+		//driver.findElement(By.name("pdt_additionalApprovedBy")).click();
 		Thread.sleep(4000);
 		driver.findElement(By.xpath("//button[@id='btnPdt_Apply']")).click();
 
@@ -203,7 +204,7 @@ public class Customer_Mobile_new_Test {
 
 		driver.findElement(By.xpath("//input[@name='scanBarcode']")).sendKeys("158160497");
 		driver.findElement(By.id("form")).submit();
-		driver.findElement(By.id("txtSalesmanCode")).click();
+		driver.findElement(By.id("txtSalesmanCode")).clear();
 		driver.findElement(By.id("txtSalesmanCode")).sendKeys("102");
 		driver.findElement(By.xpath("//button[@id='btnDone']")).click();
 

@@ -18,7 +18,7 @@ public class Muziris_ERP_Admin_login {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver= new ChromeDriver();
 		driver.get("http://192.168.0.131:8394/posmodules/");
-		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("arun");
+		driver.findElement(By.xpath("//input[@name='username']")).sendKeys("reshmi");
 		driver.findElement(By.xpath("//input[@name='password']")).sendKeys("admin");
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
 		

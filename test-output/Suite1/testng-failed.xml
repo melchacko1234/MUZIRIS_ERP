@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" parallel="none" allow-return-values="true">
-  <test name="Test1">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" parallel="none">
+  <test thread-count="5" name="Test1">
     <classes>
-      <class name="utils.Readingbarcode_excel"/>
+      <class name="test.Promotion_140_2_items_50percent_discount_existmobilecust"/>
     </classes>
   </test> <!-- Test1 -->
 </suite> <!-- Failed suite [Suite1] -->
